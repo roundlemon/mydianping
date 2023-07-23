@@ -1,7 +1,7 @@
 # mydianping
 点评项目，使用时需要新建application.yaml(本人开发时使用云服务器，为了不暴露密码没有添加该文件)
 
-##创建application.yaml
+## 创建application.yaml
 在src/main/resources目录下创建application.yaml文件，并拷贝以下内容
 ```
 server:
@@ -35,4 +35,5 @@ server:
      type-aliases-package: com.hmdp.entity # 别名扫描包
    logging:
      level:
-       com.hmdp: debug```
+       com.hmdp: debug
+```
