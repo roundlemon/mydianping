@@ -9,4 +9,6 @@ public class SystemConstants {
     public static final int MAX_PAGE_SIZE = 10;
     public static final String TOKEN_PREFIX = "token:";
     public static final String PHONE_PREFIX = "phone_code:";
+    public static final String CACHE_SHOP_KEY = "cache:shop:";
+    public static final String CACHE_SHOP_TYPE_KEY = "cache:shop_type";
 }
