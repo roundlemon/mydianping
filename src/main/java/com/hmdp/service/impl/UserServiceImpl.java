@@ -67,9 +67,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         Object cacheCode = stringRedisTemplate.opsForValue().get(PHONE_PREFIX+phone);
         String code = loginForm.getCode();
 
-        if(cacheCode==null || !cacheCode.toString().equals(code)){
-            return Result.fail("验证码错误");
-        }
+//        if(cacheCode==null || !cacheCode.toString().equals(code)){
+//            return Result.fail("验证码错误");
+//        }
 
         User user = query().eq("phone",phone).one();
 
@@ -86,7 +86,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                         .setIgnoreNullValue(true)
                         .setFieldValueEditor((fieldName, fieldValue) -> fieldValue.toString()));
         stringRedisTemplate.opsForHash().putAll(TOKEN_PREFIX +token,userMap);
-        stringRedisTemplate.expire(token,10,TimeUnit.MINUTES);
+//        stringRedisTemplate.expire(token,10,TimeUnit.MINUTES);
         stringRedisTemplate.delete(PHONE_PREFIX+phone);
 
         return Result.ok(token);
