@@ -30,5 +30,5 @@ end
 redis.call('incrby', stockKey, -1)
 -- 将userId存入当前优惠券的set集合
 redis.call('sadd', orderKey, userId)
-redis.call("xadd","stream.orders","*","userId",userId,"voucherId",voucherId,"id",orderId)
+--redis.call("xadd","stream.orders","*","userId",userId,"voucherId",voucherId,"id",orderId)
 return 0
