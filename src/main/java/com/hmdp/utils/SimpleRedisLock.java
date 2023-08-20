@@ -32,7 +32,7 @@ public class SimpleRedisLock implements ILock {
     }
 
     @Override
-    public void unlock() {
+    public void unLock() {
         //通过DEL来删除锁
         stringRedisTemplate.delete(KEY_PREFIX + name);
     }
